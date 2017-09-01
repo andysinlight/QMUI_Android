@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/design_appbar_elevation"
+              android:paddingLeft="@dimen/design_appbar_elevation"
+              android:paddingRight="@dimen/design_appbar_elevation"
+              android:paddingTop="@dimen/design_appbar_elevation"
+    >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonAssesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AccSet"/>
+
+        <Button
+            android:id="@+id/buttonStartNofi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="StartNF"/>
+
+        <Button
+            android:id="@+id/buttonClearView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ClearViews"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

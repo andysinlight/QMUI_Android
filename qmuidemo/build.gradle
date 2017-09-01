@@ -12,7 +12,6 @@ android {
             keyPassword properties.getProperty("RELEASE_KEY_PASSWORD")
             storeFile file('qmuidemo.keystore')
             storePassword properties.getProperty("RELEASE_STORE_PASSWORD")
-            v2SigningEnabled false
         }
     }
     compileSdkVersion parent.ext.compileSdkVersion
@@ -37,7 +36,7 @@ android {
     }
     // 避免 lint 检测出错时停止构建
     lintOptions {
-      abortOnError false
+        abortOnError false
     }
 }
 
@@ -67,6 +66,7 @@ dependencies {
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    compile(name: 'notifyutil2-release', ext: 'aar')
 
     //test
 //    testCompile 'junit:junit:4.12'

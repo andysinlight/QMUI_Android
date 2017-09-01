@@ -27,6 +27,8 @@ import com.qmuiteam.qmuidemo.fragment.util.QDDrawableHelperFragment;
 import com.qmuiteam.qmuidemo.fragment.util.QDStatusBarHelperFragment;
 import com.qmuiteam.qmuidemo.fragment.util.QDViewHelperFragment;
 import com.qmuiteam.qmuidemo.model.QDItemDescription;
+import com.qmuiteam.qmuidemo.service.ServiceFragment;
+import com.qmuiteam.qmuidemo.service.SettingsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +95,8 @@ public class QDDataManager {
         mUtilNames.add(QDDrawableHelperFragment.class);
         mUtilNames.add(QDStatusBarHelperFragment.class);
         mUtilNames.add(QDViewHelperFragment.class);
+        mUtilNames.add(ServiceFragment.class);
+        mUtilNames.add(SettingsFragment.class);
     }
 
     /**

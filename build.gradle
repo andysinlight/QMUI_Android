@@ -16,11 +16,14 @@ allprojects {
     repositories {
         jcenter()
         mavenLocal()
+        flatDir {
+            dirs 'libs'   // aar目录
+        }
     }
 
     ext {
         buildToolsVersion = "24.0.3"
-        minSdkVersion = 14
+        minSdkVersion = 19
         targetSdkVersion = 25
         compileSdkVersion = 25
         supportVersion = "25.3.1"
