@@ -5,6 +5,12 @@ import android.os.Bundle;
 import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.util.Log;
+import android.view.MotionEvent;
+
+import com.qmuiteam.qmuidemo.model.MessageEvent;
+import com.qmuiteam.qmuidemo.model.NotificaionBean;
+
+import org.greenrobot.eventbus.EventBus;
 
 /**
  * Created by andy on 2017/9/1.
@@ -23,6 +29,8 @@ public class NotificationMonitorService extends NotificationListenerService {
         // 获取接收消息的内容
         String notificationText = extras.getString(Notification.EXTRA_TEXT);
         Log.i("XSL_Test", "Notification posted " + notificationTitle + " & " + notificationText + "&" + notificationPkg);
+        EventBus.getDefault().post(new MessageEvent(MessageEvent.NEW_NOTIFICATION,new NotificaionBean(notificationTitle,notificationText)));
+
     }
 
     // 在删除消息时触发

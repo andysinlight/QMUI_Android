@@ -15,6 +15,11 @@ import com.qmuiteam.qmuidemo.R;
 import com.qmuiteam.qmuidemo.base.BaseFragment;
 import com.qmuiteam.qmuidemo.lib.Group;
 import com.qmuiteam.qmuidemo.lib.annotation.Widget;
+import com.qmuiteam.qmuidemo.model.MessageEvent;
+import com.qmuiteam.qmuidemo.model.NotificaionBean;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -149,6 +154,13 @@ public class SettingsFragment extends BaseFragment implements View.OnClickListen
             }
         }
         return false;
+    }
+
+    public void onMainEvent(MessageEvent event) {
+        if (event.getType() == MessageEvent.NEW_NOTIFICATION) {
+            NotificaionBean bean = (NotificaionBean) event.getObject();
+            Toast.makeText(getContext(), bean.getTitle() + "&" + bean.getContent(), Toast.LENGTH_SHORT).show();
+        }
     }
 
 

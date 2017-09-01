@@ -13,10 +13,17 @@ import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethod;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.QMUIWindowInsetLayout;
 import com.qmuiteam.qmuidemo.R;
+import com.qmuiteam.qmuidemo.model.MessageEvent;
+import com.qmuiteam.qmuidemo.model.NotificaionBean;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * Created by cgspine on 15/9/14.
@@ -221,5 +228,22 @@ public abstract class BaseFragment extends Fragment {
     public TransitionConfig onFetchTransitionConfig() {
         return SLIDE_TRANSITION_CONFIG;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMainEvent(MessageEvent event) {
+    }
+
 }
 

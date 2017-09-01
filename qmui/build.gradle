@@ -48,6 +48,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile("com.android.support:recyclerview-v7:$supportVersion")
     compile("com.android.support:appcompat-v7:$supportVersion")
     compile("com.android.support:design:$supportVersion")
